@@ -16,16 +16,20 @@
 
 package com.cloud.n3xgen.timedemo;
 
-import jakarta.validation.Constraint;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
-import jakarta.validation.Payload;
-
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.text.SimpleDateFormat;
 
+import javax.validation.Constraint;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+import javax.validation.Payload;
+
 /**
- * The annotated String must be a valid {@link SimpleDateFormat} pattern.
+ * The annotated String must be a valid {@link java.text.SimpleDateFormat} pattern.
  *
  * @author Eric Bottard
  * @author Soby Chacko

@@ -33,9 +33,9 @@ public abstract class TimeSupplierApplicationExtraction {
 	@Autowired
 	TimeSupplierProperties timeSupplierProperties;
 
-	protected abstract void testTimeSupplier();
-
-	@SpringBootApplication
+	protected abstract String testTimeSupplier();
+	
+//	@SpringBootApplication
 	static class TimeSupplierTestApplication {
 	}
 }

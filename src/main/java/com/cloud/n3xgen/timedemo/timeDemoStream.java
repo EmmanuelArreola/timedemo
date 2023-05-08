@@ -1,22 +1,35 @@
 package com.cloud.n3xgen.timedemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 import java.util.function.Supplier;
 @Configuration
-public class timeDemoStream extends TimeSupplierApplicationExtraction {
-
-    @Override
-    protected void testTimeSupplier() {
-
-    }
+@Service
+public class timeDemoStream  extends TimeSupplierApplicationExtraction{
+	
+	public timeDemoStream() {
+		
+	}
+	
+	@Override
+	protected String testTimeSupplier() {
+		final String time = timeSupplier.get();
+		return time;
+	}
+   
     @Bean
     public Supplier<String> timeExtractor()  {
         return () -> {
-            final String time = timeSupplier.get();
             System.out.println("Starting");
-            return time;
+            System.out.println("Testing" + testTimeSupplier());
+            return testTimeSupplier();
         };
     }
+
+
+
 }

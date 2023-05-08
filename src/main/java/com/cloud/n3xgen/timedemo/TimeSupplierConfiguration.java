@@ -20,6 +20,7 @@ import org.apache.commons.lang3.time.FastDateFormat;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.function.Supplier;
@@ -28,6 +29,7 @@ import java.util.function.Supplier;
  * @author Soby Chacko
  */
 @Configuration
+@Component
 @EnableConfigurationProperties(TimeSupplierProperties.class)
 public class TimeSupplierConfiguration {
 
